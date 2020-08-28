@@ -1,21 +1,21 @@
-import {useState} from 'react'
+import { useState } from 'react'
 
-export const useCounter = (initialState) => {
-
-    const [state, setState] = useState(initialState);
+export const useCounter = (initialState = 0) => {
+        //state, setState
+    const [counter, setCounter] = useState(initialState  );
 
     const increment = () =>{
-        setState(state+1);
+        setCounter(counter + 1);
     }
     const decrement = () =>{
-        setState(state-1);
+        setCounter(counter - 1);
     }
     const reset = () =>{
-        setState(initialState);
+        setCounter(initialState);
     }
 
     return {
-        state,increment,decrement,reset
+        counter,increment,decrement,reset
     }
 }
 
